@@ -102,7 +102,7 @@
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 760px) {
   .top-links, .main-header nav ul {
     display: none;
   }
@@ -123,26 +123,165 @@
   width: calc(100% - 20px);
   height: 450px;
   background: linear-gradient(#eee, #fff 5%);
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
 }
 
 .cover {
-  background: lightpink;
   position: relative;
+  color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.cover a {
+  text-decoration: none;
+  color: #fff;
 }
 
 .cover:first-child {
   grid-row: 1 / span 2;
+  background-image:
+  linear-gradient(170deg, rgba(246,7,7,1) 0%, rgba(0,0,0,0) 65%), url('../images/rickmorty.jpg');
+  background-size: cover;
+}
+
+.cover:nth-child(2) {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../images/brooklyn.jpg);
+  background-size: cover;
+}
+
+.cover:nth-child(3) {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../images/snapchat.png);
+  background-size: cover;
 }
 
 .logo {
   height: 130px;
+  margin: 10px;
+}
+
+.cover-date {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  font-size: 14px;
+}
+
+.cover header {
+  position: absolute;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 80%);}
+
+.cover header h5 {
+  margin: 0 20px 5px 20px;
+  text-transform: uppercase;
+  line-height: 1.5;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cover header h2 {
+  margin: 0 20px 15px 20px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.cover:first-child header h2 {
+  font-size: 56px;
+  letter-spacing: -.015em;
+}
+
+.cover-data {
+  margin: 0 20px 15px 20px;
+}
+
+.cover-data li {
+  display: inline;
+  margin-right: 10px;
+  font-size: 12px;
+  color: hsla(0,0%,100%,.6);
+}
+
+.cover-data li img {
+  vertical-align: middle;
+  width: 18px;
+  height: 18px;
+  filter: brightness(200%);
+}
+
+.cover-data li a {
+  text-decoration: none;
+  color: hsla(0,0%,100%,.6);
+}
+
+.cover-data li a:hover {
+  color: #fff;
+}
+
+@media only screen and (max-width: 1580px) {
+  .cover-stories {
+    height: 544px;
+  }
+
+  .logo {
+    height: 146px;
+  }
+}
+
+@media only screen and (max-width: 1380px) {
+  .logo {
+    width: 55%;
+    height: auto;
+  }
 }
 
 @media only screen and (max-width: 1000px) {
-  .logo {
-    visibility: hidden;
+  .logo,
+  .cover-date,
+  .cover:nth-child(2) header ul li:last-child,
+  .cover:nth-child(3) header ul li:last-child {
+    display: none;
+  }
+
+  .cover:first-child {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../images/rickmorty.jpg);
+  }
+
+  .cover header h5,
+  .cover header a h2 {
+    margin: 0 10px 5px 10px;
+  }
+
+  .cover-data {
+    margin: 0 10px 15px 10px;
+  }
+
+  .cover:first-child header h2 {
+  font-size: 40px;
   }
 }
+
+@media only screen and (max-width: 760px) {
+  .cover-stories {
+    grid-template-columns: 1fr;
+  }
+
+  .cover {
+    height: 225px;
+  }
+
+  .cover header h2,
+  .cover:first-child header h2 {
+    font-size: 20px;
+  }
+
+  .cover header h5,
+  .cover header ul {
+    margin: 0 10px 5px 10px;
+  }
+}
+
 
 /* Latest News */
 
