@@ -168,9 +168,9 @@
 
 .cover header {
   position: absolute;
-  right: 0px;
-  left: 0px;
-  bottom: 0px;
+  right: 0;
+  left: 0;
+  bottom: 0;
   background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 80%);}
 
 .cover header h5 {
@@ -265,6 +265,7 @@
 @media only screen and (max-width: 760px) {
   .cover-stories {
     grid-template-columns: 1fr;
+    height: auto;
   }
 
   .cover {
@@ -285,8 +286,12 @@
 
 /* Latest News */
 
-.latest, .deals, .categories, .latest-deals {
+.deals, .categories, .latest-deals {
   background: blue;
+}
+
+
+.latest, .deals, .categories, .latest-deals {
   margin: 80px auto 0 auto;
   max-width: 1176px;
 }
@@ -303,7 +308,7 @@
 
 .latest-grid, .deals-grid, .latest-deals-grid {
   display: grid;
-  grid-template-columns: repeat(4, 270px);
+  grid-template-columns: repeat(4, minmax(224px, 270px));
   justify-content: center;
   grid-gap: 20px;
 }
@@ -314,7 +319,7 @@
 
 .latest-item a img {
   width: 100%;
-  max-height: 135px;
+  height: 135px;
 }
 
 .latest-item a {
@@ -353,6 +358,48 @@
 .latest-item ul li a:hover {
   color: #555;
 }
+
+@media only screen and (max-width: 1000px) {
+  .latest-grid {
+    grid-template-columns: repeat(3, minmax(225px, 310px));
+  }
+
+  .latest-item a img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .latest-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .latest-item {
+    display: grid;
+    grid-template-columns: 75px 1fr;
+    column-gap: 10px;
+    margin-left: 20px;
+    height: auto;
+  }
+
+  .latest-item a:first-child {
+    grid-row: 1 / span 3;
+  }
+
+  .latest-item a img {
+    height: 75px;
+  }
+
+  .latest-item a h4 {
+    margin-top: 0;
+    font-size: 14px;
+  }
+
+  .latest-item ul {
+    margin-top: 0;
+  }
+
 
 /* Deals */
 
