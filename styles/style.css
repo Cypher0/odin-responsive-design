@@ -286,34 +286,40 @@
 
 /* Latest News */
 
-.deals, .categories, .latest-deals {
+.funding, .categories, .latest-deals {
   background: blue;
 }
 
 
-.latest, .deals, .categories, .latest-deals {
+.latest, .funding, .categories, .latest-deals {
   margin: 80px auto 0 auto;
   max-width: 1176px;
 }
 
-.latest a h2 {
+.latest a,
+.funding a {
+  text-decoration: none;
+}
+
+.latest a h2,
+.funding a h2 {
   margin-bottom: 28px;
   margin-left: 20px;
   color: #f42;
-  text-decoration: none;
   font-family: sans-serif;
   font-size: 28px;
   font-weight: 700;
 }
 
-.latest-grid, .deals-grid, .latest-deals-grid {
+.latest-grid, .funding-grid, .latest-deals-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(224px, 270px));
   justify-content: center;
   grid-gap: 20px;
 }
 
-.latest-item, .deals-item {
+.latest-item,
+.funding-item {
   height: 227px;
 }
 
@@ -399,18 +405,85 @@
   .latest-item ul {
     margin-top: 0;
   }
+}
 
+/* Latest Funding section */
 
-/* Deals */
-
-.deals header {
+.funding-header-main {
   background: lightgreen;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
-.deals-links li {
+.funding-img {
+ position: absolute;
+ top: 10px;
+ left: 10px;
+ width: 60px;
+ height: 60px;
+}
+
+.funding-links {
+  margin-top: 10px;
+  color: #f42;
+}
+
+.funding-links li {
   display: inline;
+  margin: 0 10px;
+}
+
+.funding-links li a {
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #f42;
+}
+
+.funding-item {
+  position: relative;
+  background-color: #fffaf8;
+}
+
+.funding-header-top {
+  height: 40px;
+  background-color: #f42;
+}
+
+.funding-header-top h4 {
+  padding-top: 11px;
+  margin-left: 100px;
+  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.funding-header-bottom {
+  height: 60px;
+  background: rgba(255,68,34,.08);
+}
+
+.funding-header-bottom h4,
+.funding-header-bottom h5 {
+  margin-left: 100px;
+  font-family: sans-serif;
+  color: #000;
+}
+
+.funding-header-bottom h4 {
+  padding-top: 13px;
+  margin-bottom: 4px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.funding-header-bottom h5 {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  opacity: .5;
 }
 
 /* Categories */
@@ -421,6 +494,7 @@
   justify-content: center;
   grid-gap: 20px;
 }
+
 .category {
   background: lightseagreen;
   height: 705px;
@@ -430,11 +504,6 @@
 
 .latest-deals {
   margin-bottom: 80px;
-}
-
-.latest-deals header {
-  display: flex;
-  justify-content: space-between;
 }
 
 .latest-deals-item {
