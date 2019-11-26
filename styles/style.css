@@ -895,12 +895,12 @@
   .latest-deals-item {
     display: grid;
     grid-template-columns: 75px 1fr;
-    grid-template-rows: 25px 25px 25px;
+    grid-template-rows: 1fr 20px 1fr auto;
     column-gap: 10px;
     height: 75px;
   }
 
-  .latest-deals-item a:first-child {
+  .latest-deals-img {
     grid-row: 1 / span 3;
   }
 
@@ -909,12 +909,14 @@
   }
 
   .latest-deals-item a h4 {
+    display: block;
     margin-top: 0;
     font-size: 14px;
   }
 
   .latest-deals-item ul {
     grid-column: 2;
+    grid-row: 2;
   }
 }
 
@@ -923,7 +925,7 @@
 
 
 .footer-links {
-  background: darkslategray;
+  background: #131313;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -931,15 +933,89 @@
   height: 160px;
 }
 
-.social li {
-  display: inline-block;
+.social {
+  margin-top: 12px;
+  text-align: center;
 }
 
-footer nav ul li {
+.social li {
+  display: inline-block;
+  padding: 6px;
+}
+
+.social li img {
+  border-radius: 50%;
+}
+
+.social li img:hover {
+  opacity: 0.5;
+}
+
+.footer-nav {
+  margin-top: 21px;
+  text-align: center;
+}
+
+.footer-nav li {
   display: inline;
+  margin: 0 6px;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  font-size: 12px;
+}
+
+.footer-nav li a {
+  text-decoration: none;
+  color: #aaa;
+}
+
+.footer-nav li a:hover {
+  color: #fff;
 }
 
 .copyright {
-  background: black;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
   height: 98px;
+  color: #aaa;
+  font-family: sans-serif;
+  background: #000;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.copyright .wrapper {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: baseline;
+  grid-gap: 2px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  height: 12px;
+}
+
+.powered-by {
+  position: relative;
+  top: 4px;
+  height: 16px;
+}
+
+@media only screen and (max-width: 760px) {
+  .social li {
+    padding: 2px;
+  }
+
+  .footer-nav li {
+    margin: 0 1px;
+  }
+
+  .copyright .wrapper {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    grid-gap: 4px;
+  }
 }
